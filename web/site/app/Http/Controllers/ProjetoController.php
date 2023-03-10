@@ -16,8 +16,13 @@ class ProjetoController extends Controller
      */
     public function index()
     {
-        //$product = ProductModel::table('2023_create_product_models_table')->paginate(5);
-       $product=ProductModel::all();
+        //$product = ProductModel::table('2023_create_product_models_table')->paginate(5); nessa linha de codigo eu consigo paginar a pagina em 5 itens
+
+       // no comando a baixo eu paginei minha pagina em 5 itens
+        $product=ProductModel::paginate(5);
+        /* no comando abaixo eu retorno todos os itens do banco de dados
+        $product=ProducModel:: all();
+        */
         return view('pagina_inicial/inicio',['product'=>$product]);
     }
     /**

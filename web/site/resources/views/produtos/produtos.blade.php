@@ -12,12 +12,24 @@
 
 <hr>
 
-<div class="container">
-    @foreach ($product as $products)
-        {{ $products->name }} <br>
-        {{ $products->description }}
 
-    @endforeach
+<div class="container ">
+    <table>
+        <thead>
+            <tr>
+            <th>NOME</th>
+            <th>DESCRIÇAO</th>
+            </tr>
+        </thead>
+             <tbody>
+                @foreach ($product as $products)
+        <tr>
+            <td>{{ $products->name }}</td><br>
+            <td>{{ $products->description }}</td>
+        </tr>
+                @endforeach
+            </tbody>
+    </table>
 </div>
 
 </body>
